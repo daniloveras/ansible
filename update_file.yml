@@ -1,0 +1,13 @@
+--
+# Playbook atualizar arquivo
+- name: Personalizando o arquivo de resolv.conf
+  hosts: all
+  tasks:
+    - name: Atualizando o arquivo
+      copy: src=resolv.conf dest=/etc/resolv.conf
+
+- name: Garantir a instalação de pacotes
+  hosts: devops docker
+  tasks:
+    - name: Instalando o pacote sl
+      apt: name=sl update_cache=yes state=present
