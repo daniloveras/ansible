@@ -1,4 +1,4 @@
---
+---
 # PLaybook para teste de operador condicional
 - name: Usando o when
   hosts: all
