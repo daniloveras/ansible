@@ -1,0 +1,12 @@
+---
+# Playbook array com vários pacotes
+- name: Garantir a instalação de vários pacotes
+  hosts: devops docker
+  tasks:
+    - name: Instalando os pacote vim, nano, sl e ccze
+      apt: name={{ item }} update_cache=yes state=present
+      with_itens:
+        - vim
+        - nano
+        - sl
+        - ccze
