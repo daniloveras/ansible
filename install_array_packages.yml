@@ -5,7 +5,7 @@
   tasks:
     - name: Instalando os pacote vim, nano, sl e ccze
       apt: name={{ item }} update_cache=yes state=present
-      with_itens:
+      with_items:
         - vim
         - nano
         - sl
