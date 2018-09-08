@@ -1,0 +1,10 @@
+---
+# Playbook para criacao de usuarios
+- name: Criando usuarios
+  hosts: all
+  vars:
+    - username: sysadmin
+
+  tasks:
+    - name: Criando o usuario {{ username }}
+      user: name={{ username }} shell=/bin/bash
