@@ -1,0 +1,13 @@
+--
+# PLaybook para teste de operador condicional
+- name: Usando o when
+  hosts: all
+  tasks:
+    - name: Testando a existencia de um arquivo chamado teste.txt
+      command: test -f /tmp/teste.txt
+      register: resultado
+      ignore_erros: yes
+
+    - name: Escrevendo conteudo no arquivo caso exista
+      shell: echo "Estou escrevendo pois a condicao foi atendida" > /tmp/teste.txt
+      when: resultado.rc == 0
