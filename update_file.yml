@@ -1,4 +1,4 @@
---
+---
 # Playbook atualizar arquivo
 - name: Personalizando o arquivo de resolv.conf
   hosts: all
