@@ -1,0 +1,2 @@
+- name: Reiniciar sudo
+  command: /usr/bin/sudo -k
