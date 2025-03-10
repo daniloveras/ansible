@@ -1,0 +1,7 @@
+# Incluir permissões de grupos
+{% for arquivo in lookup('fileglob', 'sudoers-config/grupos/*.conf', wantlist=True) %}
+{{ lookup('file', arquivo) }}
+{% endfor %}
+
+# Incluir permissões do host específico
+{{ lookup('file', 'sudoers-config/hosts/' + inventory_hostname + '.conf') }}
