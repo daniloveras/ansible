@@ -1,1 +1,5 @@
-
+- name: Gerenciar sudoers via GitLab
+  hosts: servers
+  become: yes
+  roles:
+    - sudoers
